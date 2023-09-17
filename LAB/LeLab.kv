@@ -1,179 +1,46 @@
-ImagesExemple:
+#:import layout_exemples layout_exemples
+#:import widget_exemples widget_exemples
+#:import nav nav
+#:import action_bar action_bar
 
-# ScrollViewExemple:
-# PageLayoutExemple:
-# StackLayoutExemple:
-# GridLayoutExemple:
-# AnchorLayoutExemple:
-# BoxLayoutExemple:
-# MainWidget:
-
-<ImagesExemple@GridLayout>
-    cols: 3
-    Image:
-        source: "images/cake.jpg"
-    Image:
-        source: "images/cake.jpg"
-        allow_stretch: True
-    Image:
-        source: "images/cake.jpg"
-        keep_ratio: False
-    Image:
-        source: "images/donut.gif"
-        anim_delay: 0/60     
-
-<WidgetsExemple>
-    cols: 3
-    ToggleButton:
-        text: "OFF"
-        on_state: root.on_toggle_button_state(self)
-        size_hint: None, 1
-        width: "100dp"
+<MenuPrincipal@BoxLayout>:
+    orientation: 'vertical'
+    Button:
+        text: 'Layouts'
+        on_press: app.manager.push('LayoutExemplesTabs')
 
     Button:
-        text: "Compter"
-        on_press: root.on_button_click()
-        disabled: not root.compteur_actif
-
-    Label:
-        text: root.mon_texte
-        font_name: "fonts/Lcd.ttf"
-        font_size: "80dp"
-        color: 1, 0, 0, 1
-
-    Switch:
-        id: mon_switch
-        on_active: root.on_switch_active(self)
-        active: True
-        size_hint: None, 1
-        width: "100dp"
-
-    Slider:
-        id: mon_slider
-        min: 0
-        max: 100
-        value: 50
-        disabled: not mon_switch.active
-        # on_value: root.on_slider_value(self)
-
-    BoxLayout:
-        orientation: "vertical"
-        Label:
-            text: str(int(mon_slider.value))
-            font_name: "fonts/Lcd.ttf"
-            font_size: "80dp"
-            color: 1, 0, 0, 1
-        ProgressBar:
-            value: mon_slider.value
-            max: mon_slider.max
-            min: mon_slider.min
-            size_hint: 1, .2   
-
-    TextInput:
-        id: mon_text_input
-        size_hint: None, 1
-        width: "100dp"
-        text: "Hello World"
-        multiline: False
-        on_text_validate: root.on_text_validate(self)
-    Label:
-        text: root.texte_input_str
-        font_name: "fonts/Lcd.ttf"
-        color: 1, 0, 0, 1    
-    
-
-
-
-<PageLayoutExemple@PageLayout>
-    MainWidget:
-    BoxLayoutExemple:
-    AnchorLayoutExemple:
-    GridLayoutExemple:
-
-<ScrollViewExemple@ScrollView>
-    StackLayoutExemple:
-        size_hint: 1, None
-        height: self.minimum_height
-
-<StackLayoutExemple>:
-    orientation: "lr-tb"
-    # Button:
-    #     text: "Hello World"
-    #     size_hint: .2, .2
-    # Button:
-    #     text: "Hello World 2"
-    #     size_hint: .2, .2
-   
-
-
-<GridLayoutExemple>:
-    cols: 3
+        text: 'Widgets'
+        on_press: app.manager.push('WidgetExemples')
 
     Button:
-        text: "Hello World"
-        size_hint: None, 1
-        width: "60dp"
-    BoxLayoutExemple:
-    Button:
-        text: "Hello World 3"
-    Button:
-        text: "Hello World 4"
-        size_hint: None, 1
-        width: "60dp"
-    Button:
-        text: "Hello World 5"
-    Button:
-        text: "Hello World 6"                
+        text: 'Images'
+        on_press: app.manager.push('ImagesExemples')
 
 
-<AnchorLayoutExemple>:
-    anchor_x: "center"
-    anchor_y: "top"
+<MyScreenManager>:
+    Screen:
+        name: 'MenuPrincipal'
+        MenuPrincipal:
 
-    BoxLayout:
-        size_hint: .2, .2
-        Button:
-            text: "Hello World"
+    Screen:
+        name: 'ImagesExemples'
+        BoxLayoutWithActionbar:
+            title: 'Images'
+            ImagesExemple:
 
+    Screen:
+        name: 'WidgetExemples'
+        BoxLayoutWithActionbar:
+            title: 'Widgets'
+            WidgetsExemple:
 
-        Button:
-            text: "Hello World 2"
+    Screen:
+        name: 'LayoutExemplesTabs'
+        BoxLayoutWithActionbar:
+            title: 'Layouts'
+            LayoutExemplesTabs:                                 
 
-
-
-<BoxLayoutExemple>:
-    orientation: "horizontal"
-    spacing: "10dp"
-
-    Button:
-        text: "Hello World"
-        # size: "100dp", "60dp"
-        size_hint: .5, .5
-        color: 1, 1, 0, 1
-        # pos_hint: {"center_x": .5}
-
-    BoxLayout:
-        orientation: "vertical"
-        Button:
-            text: "B1"
-        Button:
-            text: "B2"
-        Button:
-            text: "B3"
-        Button:
-            text: "B4"        
+                 
 
 
-
-<MainWidget>:
-    Button:
-        text: "Hello World"
-        size: "100dp", "100dp"
-        pos: "600dp", "200dp"
-        color: 1, 1, 0, 1   
-
-    Label:
-        text: "Hello WWW"
-        size: "100dp", "100dp"
-        pos: "400dp", "200dp"
-        color: 1, 0, 0, 1    

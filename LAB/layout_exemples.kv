@@ -1,0 +1,116 @@
+<LayoutExemplesTabs@TabbedPanel>:
+    do_default_tab: False
+    TabbedPanelItem:
+        text: "Widget"
+        MainWidget:
+    TabbedPanelItem:
+        text: "Box"
+        BoxLayoutExemple:
+    TabbedPanelItem:
+        text: "Anchor"
+        AnchorLayoutExemple:
+    TabbedPanelItem:
+        text: "Grid"
+        GridLayoutExemple:
+    TabbedPanelItem:
+        text: "Stack"
+        StackLayoutExemple:
+    TabbedPanelItem:
+        text: "Scroll"
+        ScrollViewExemple:
+    TabbedPanelItem:
+        text: "Page"
+        PageLayoutExemple:                             
+
+<ScrollViewExemple@ScrollView>:
+    StackLayoutExemple:
+        size_hint: 1, None
+        height: self.minimum_height
+
+
+<PageLayoutExemple@PageLayout>:
+    MainWidget:
+    BoxLayoutExemple:
+    AnchorLayoutExemple:
+    GridLayoutExemple:
+
+<StackLayoutExemple>:
+    orientation: "lr-tb"
+    # Button:
+    #     text: "Hello World"
+    #     size_hint: .2, .2
+    # Button:
+    #     text: "Hello World 2"
+    #     size_hint: .2, .2
+   
+
+
+<GridLayoutExemple>:
+    cols: 3
+
+    Button:
+        text: "Hello World"
+        size_hint: None, 1
+        width: "60dp"
+    BoxLayoutExemple:
+    Button:
+        text: "Hello World 3"
+    Button:
+        text: "Hello World 4"
+        size_hint: None, 1
+        width: "60dp"
+    Button:
+        text: "Hello World 5"
+    Button:
+        text: "Hello World 6"                
+
+
+<AnchorLayoutExemple>:
+    anchor_x: "center"
+    anchor_y: "top"
+
+    BoxLayout:
+        size_hint: .2, .2
+        Button:
+            text: "Hello World"
+
+
+        Button:
+            text: "Hello World 2"
+
+
+
+<BoxLayoutExemple>:
+    orientation: "horizontal"
+    spacing: "10dp"
+
+    Button:
+        text: "Hello World"
+        # size: "100dp", "60dp"
+        size_hint: .5, .5
+        color: 1, 1, 0, 1
+        # pos_hint: {"center_x": .5}
+
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+        Button:
+            text: "B3"
+        Button:
+            text: "B4"
+
+<MainWidget>:
+    Button:
+        text: "Hello World"
+        size: "100dp", "100dp"
+        pos: "600dp", "200dp"
+        color: 1, 1, 0, 1   
+
+    Label:
+        text: "Hello WWW"
+        size: "100dp", "100dp"
+        pos: "400dp", "200dp"
+        color: 1, 0, 0, 1                     
