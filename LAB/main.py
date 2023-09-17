@@ -7,6 +7,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.properties import ObjectProperty, StringProperty, BooleanProperty
 from nav import NavScreenManager
+from canvas_exemples import *
 from kivy.metrics import dp
 
 class MyScreenManager(NavScreenManager):
@@ -18,6 +19,7 @@ class LeLabApp(App):
     def build(self):
         self.manager = MyScreenManager()
         return self.manager
+
 
 
 

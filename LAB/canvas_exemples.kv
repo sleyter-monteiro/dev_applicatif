@@ -1,0 +1,52 @@
+#:set s dp(150)
+
+<CanvasExemplesTabs@TabbedPanel>:
+    do_default_tab: False
+    TabbedPanelItem:
+        text: "1"
+        CanvasExemple1:
+    TabbedPanelItem:
+        text: "2"
+        CanvasExemple2: 
+    TabbedPanelItem:
+        text: "3"
+        CanvasExemple3:       
+
+<CanvasExemple1>:
+    canvas:
+
+        Rectangle:
+            pos: self.center_x-s/2, self.center_y-s/2
+            size: s, s
+
+        Ellipse:
+            pos: 200, 500
+            size: s, s/2
+
+        Line:
+            points: (0, 0, self.width/4, 100, self.width/2, 0, self.width*3/4, 100, self.width, 0)
+            width: 2    
+
+<CanvasExemple2>:
+    canvas:
+        Line:
+            points: (0, self.height/2, self.width, self.height/2)
+
+        Line:
+            points: (self.width/2, 0, self.width/2, self.height)
+
+<CanvasExemple3>:
+    canvas:
+        Color:
+            rgba: 1, 0, 0, .3
+        Line:
+            circle: (self.center_x, self.center_y, 100)
+            width: 2
+
+        Line:
+            ellipse: (500, 300, 100, 200)
+            width: 4
+
+        Line:
+            rectangle: (800, 100, 300, 200) # x, y, width, height
+            width: 2        

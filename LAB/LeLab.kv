@@ -17,6 +17,10 @@
         text: 'Images'
         on_press: app.manager.push('ImagesExemples')
 
+    Button:
+        text: 'Canvas'
+        on_press: app.manager.push('CanvasExemplesTabs')   
+
 
 <MyScreenManager>:
     Screen:
@@ -39,7 +43,13 @@
         name: 'LayoutExemplesTabs'
         BoxLayoutWithActionbar:
             title: 'Layouts'
-            LayoutExemplesTabs:                                 
+            LayoutExemplesTabs:
+
+    Screen:
+        name: 'CanvasExemplesTabs'
+        BoxLayoutWithActionbar:
+            title: 'Canvas'
+            CanvasExemplesTabs:                                          
 
                  
 
